@@ -41,7 +41,7 @@ public class Algorithm {
         return stack.peek();
     }
 
-    public static int[] getFail(String p) { //得到KMP算法中模式串对应的Fail数组
+    private static int[] getFail(String p) { //得到KMP算法中模式串对应的Fail数组
         if (p.isEmpty())
             return new int[0];
         int[] fail = new int[p.length()];
@@ -129,16 +129,19 @@ public class Algorithm {
         quickSort(nums, 0, nums.length - 1);
     }
 
-    public static void quickSort(int[] nums, int low, int high) { //将数组nums中下标从low到high的元素进行一趟快速排序
+
+    private static void quickSort(int[] nums, int low, int high) { //将数组nums中下标从low到high的元素进行一趟快速排序
         if (low >= high)
             return;
         int pivot = nums[low]; //分割元素
-        int i = low + 1, j = high;
-        do { //只能为do...while，不能改成while
-            while (nums[j] > pivot) //若i一开始为low则应改成do...while
+        int i = low, j = high + 1;
+        do {
+            do
                 j--;
-            while (nums[i] < pivot) //若j一开始为high + 1则应改成do...while
+            while (nums[j] > pivot);
+            do
                 i++;
+            while (nums[i] < pivot);
             if (i < j)
                 swap(nums, i, j);
         } while (i < j);
@@ -170,7 +173,7 @@ public class Algorithm {
                 }
                 low += n1 + n2;
             }
-            for (int i = 0; i < nums.length; i++) {
+            for (int i = 0; i < k; i++) {
                 nums[i] = temp[i];
             }
             n1 *= 2;

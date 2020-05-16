@@ -5,9 +5,9 @@ import java.util.Queue;
 
 public class ListGraph { //邻接表实现的图
 
-    int n; //顶点个数
-    int e; //边数
-    EdgeNode[] edgeNodes; //邻接表
+    private int n; //顶点个数
+    private int e; //边数
+    private EdgeNode[] edgeNodes; //邻接表
 
     public ListGraph(int n) {
         this.n = n;
@@ -83,7 +83,7 @@ public class ListGraph { //邻接表实现的图
         System.out.println();
     }
 
-    public void DFS(boolean[] visited, int i) { //从顶点i开始深度优先遍历
+    private void DFS(boolean[] visited, int i) { //从顶点i开始深度优先遍历
         visited[i] = true;
         System.out.print(i + " ");
         EdgeNode p = edgeNodes[i];
@@ -95,25 +95,25 @@ public class ListGraph { //邻接表实现的图
         }
     }
 
-    public void BFS() {
+    public void BFS() { //宽度优先遍历
         boolean[] visited = new boolean[n];
-        Queue<Integer> queue = new LinkedList<>();
         for (int i = 0; i < n; i++) {
             if (!visited[i]) {
-                queue.add(i);
-                BFS(visited, queue);
+                BFS(visited, i);
             }
         }
         System.out.println();
     }
 
-    public void BFS(boolean[] visited, Queue<Integer> queue) {
+    private void BFS(boolean[] visited, int i) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(i);
         while (!queue.isEmpty()) {
-            int i = queue.peek();
-            System.out.print(i + " ");
-            visited[i] = true;
+            int v = queue.peek();
+            System.out.print(v + " ");
+            visited[v] = true;
             queue.remove();
-            EdgeNode p = edgeNodes[i];
+            EdgeNode p = edgeNodes[v];
             while (p != null) {
                 if (!visited[p.adjVertex]) {
                     queue.add(p.adjVertex);

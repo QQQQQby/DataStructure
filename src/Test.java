@@ -78,29 +78,31 @@ public class Test {
 
 //        System.out.println(Algorithm.calculateRPN("5.5 2.2 * 2 +"));
 
-        BinaryTree tree = new BinaryTree("1 2 4 # # # 3 # 5 #");
-        tree.preOrderTraverse();
-        tree.preOrderTraverse2();
-        tree.preOrderTraverse3();
+//        BinaryTree tree = new BinaryTree("1 2 4 # # # 3 # 5 #");
+//        tree.preOrderTraverse();
+//        tree.preOrderTraverse2();
 //        tree.inOrderTraverse();
 //        tree.postOrderTraverse();
 
 //        System.out.println(tree.height(5));
 
-//        int[] nums = {5, 3, 7, 2, 6, 4, 8, 10, 1, 9, 0};
+        int[] nums = {5, 3, 7, 2, 6,13, 4, 8, 10, 1, 9, 0, 11};
+//        int[] nums = {5, 0};
 //        Algorithm.halfSelectSort(nums);
-////        Algorithm.selectSort(nums);
-////        Algorithm.bubbleSort(nums);
-////        Algorithm.insertSort(nums);
-////        Algorithm.mergeSort(nums);
-////        Algorithm.heapSort(nums);
-//        Algorithm.printArray(nums);
+//        Algorithm.selectSort(nums);
+//        Algorithm.bubbleSort(nums);
+//        Algorithm.insertSort(nums);
+        Algorithm.mergeSort(nums);
+//        Algorithm.heapSort(nums);
+//        Algorithm.quickSort(nums);
+        Algorithm.printArray(nums);
 
-//        ListGraph graph = new ListGraph(6);
+//        ListGraph graph = new ListGraph(7);
 //        graph.insert(0, 4, 1);
 //        graph.insert(0, 2, 1);
 //        graph.insert(0, 1, 1);
 //        graph.insert(1, 3, 1);
+//        graph.insert(4, 6, 1);
 //        graph.insert(4, 5, 1);
 //        graph.DFS();
 //        graph.BFS();
