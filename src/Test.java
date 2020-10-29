@@ -86,16 +86,21 @@ public class Test {
 
 //        System.out.println(tree.height(5));
 
-        int[] nums = {5, 3, 7, 2, 6,13, 4, 8, 10, 1, 9, 0, 11};
+//        int[] nums = {
+//                32, 74, 66, 88, 93, 4, 25, 87, 49, 24,
+//                97, 71, 13, 82, 68, 86, 21, 60, 54, 61,
+//                12, 80, 8, 76, 92, 62, 7, 96, 51, 29,
+//                67, 55, 64, 28, 36, 35, 81, 9, 53, 83,
+//                11, 79, 6, 95, 100, 90, 52, 47, 99, 98, 23, 40, 59, 65, 27, 18, 85, 70, 30, 33, 20, 15, 31, 41, 45, 84, 5, 56, 91, 46, 42, 43, 34, 22, 50, 78, 1, 89, 3, 72, 38, 17, 69, 14, 77, 26, 58, 63, 39, 19, 10, 37, 75, 94, 48, 73, 57, 44, 16, 2};
 //        int[] nums = {5, 0};
 //        Algorithm.halfSelectSort(nums);
 //        Algorithm.selectSort(nums);
 //        Algorithm.bubbleSort(nums);
 //        Algorithm.insertSort(nums);
-        Algorithm.mergeSort(nums);
+//        Algorithm.mergeSort(nums);
 //        Algorithm.heapSort(nums);
 //        Algorithm.quickSort(nums);
-        Algorithm.printArray(nums);
+//        Algorithm.printArray(nums);
 
 //        ListGraph graph = new ListGraph(7);
 //        graph.insert(0, 4, 1);
@@ -125,6 +130,12 @@ public class Test {
 //        tree.inOrderTraverse();
 //        tree.inOrderTraverse2();
 //        System.out.println(tree.isAVL());
+
+        String a = "apple";
+        Trie trie = new Trie();
+        trie.insert(a);
+        System.out.println(trie.startsWith("apple"));
+
     }
 
 }

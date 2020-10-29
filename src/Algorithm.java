@@ -129,7 +129,6 @@ public class Algorithm {
         quickSort(nums, 0, nums.length - 1);
     }
 
-
     private static void quickSort(int[] nums, int low, int high) { //将数组nums中下标从low到high的元素进行一趟快速排序
         if (low >= high)
             return;
